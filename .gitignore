@@ -17,10 +17,3 @@ node_modules
 # Hardhat Ignition default folder for deployments against a local node
 ignition/deployments
 
-contracts/LoanSystem.sol
-contracts/Financial_Operations.sol
-contracts/UserManager.sol
-
-ignition/modules/Deploy.ts
-
-test/FinancialSystem-test.ts
