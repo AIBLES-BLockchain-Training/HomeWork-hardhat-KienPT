@@ -34,6 +34,10 @@ abstract contract AbstractAsset is IDigitalAsset {
         return _category;
     }
 
+    function getAdmin() external virtual view returns(address) {
+        return admin;
+    } 
+
     function balanceOf(address owner) external virtual view returns(uint256) {
         return balances[owner];
     } 
