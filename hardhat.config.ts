@@ -1,9 +1,9 @@
 import { HardhatUserConfig, task, vars } from "hardhat/config";
+import "@openzeppelin/hardhat-upgrades";
 import "@nomicfoundation/hardhat-toolbox";
+import * as dotenv from "dotenv";
 
-const INFURA_API_KEY = vars.get("INFURA_API_KEY");
-const SEPOLIA_PRIVATE_KEY = vars.get("SEPOLIA_PRIVATE_KEY");
-const ETHERSCAN_API_KEY = vars.get("ETHERSCAN_API_KEY");
+dotenv.config();
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -11,19 +11,29 @@ const config: HardhatUserConfig = {
     settings: {
       optimizer: {
         enabled: true,
-        runs: 1000,
+        runs: 200,
       },
     },
   },
+  gasReporter: {
+    enabled: Boolean(process.env.REPORT_GAS) || true,
+  },
   networks: {
+    bscTestnet: {
+      url: process.env.BSC_TESTNET_RPC_URL,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY || ""],
+    },
     sepolia: {
-      url: `https://sepolia.infura.io/v3/${INFURA_API_KEY}`,
-      accounts: [SEPOLIA_PRIVATE_KEY]
-    }
-  }, 
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.DEPLOYER_PRIVATE_KEY || ""],
+    },
+  },
   etherscan: {
-    apiKey: ETHERSCAN_API_KEY,
-  }
+    apiKey: {
+      sepolia: process.env.ETHERSCAN_API_KEY || "",
+      bscTestnet: process.env.BSCSCAN_API_KEY || "",
+    },
+  },
 };
 
 export default config;

@@ -1,0 +1,84 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0xc7f95192688bc258c97e4204839926DE7808C627",
+      "txHash": "0x82fe68bee4f5ebdb4c7054a6a84dcab55c37e63a6e014fd24291d63f0efd0e43",
+      "kind": "uups"
+    }
+  ],
+  "impls": {
+    "aff6bae31f85d66928aabe88b3ff4be85a966a7e01c7d7f5670ddd7bc962fa42": {
+      "address": "0x4315C677eAE96bfcb916e81577C4B327618818A2",
+      "txHash": "0xc93e54ae75f4911f8f35cafed551cdba0d261e7c62ce6e71c6d3cfb7c075af05",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "demoUUPS",
+            "src": "contracts\\demoUUPS.sol:7"
+          },
+          {
+            "label": "value",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "demoUUPS",
+            "src": "contracts\\demoUUPS.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {}
+      }
+    },
+    "b4398cc8e48e4169103f42176959223568aa892004bec50d46f9478ce2d80415": {
+      "address": "0x18bdB098474935CD22E98315A0c6d9ff72201c99",
+      "txHash": "0x7caf57e617b87328b5d7872e9466260b1eb1c3d2a686f1c5d6397d120710be25",
+      "layout": {
+        "solcVersion": "0.8.24",
+        "storage": [
+          {
+            "label": "owner",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "demoUUPS",
+            "src": "contracts\\demoUUPS.sol:7"
+          },
+          {
+            "label": "value",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256",
+            "contract": "demoUUPS",
+            "src": "contracts\\demoUUPS.sol:8"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {}
+      }
+    }
+  }
+}
