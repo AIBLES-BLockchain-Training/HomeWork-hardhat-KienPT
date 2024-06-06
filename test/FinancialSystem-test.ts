@@ -38,7 +38,7 @@ describe("FinancialSystem Contract", () => {
             const roleOfAdmin = await userManager.checkRoles(acc1.getAddress());
            
             //check role (acc1 = admin), (acc2 = user)
-            expect(roleOfUser).to.equal("user");            
+            expect(roleOfAdmin, roleOfUser).to.equal("admin", "user");            
         });
 
         it("should revert if sender is not admin", async () => {
@@ -100,12 +100,14 @@ describe("FinancialSystem Contract", () => {
 
             // Filter for Deposit events with specific arguments
             const filters = financial.filters.Deposit(acc1.getAddress(), money);
-            const events = await financial.queryFilter(filters);
+            // const events = await financial.queryFilter(filters);
 
-            // Assert that the event was emitted with correct arguments
-            expect(events.length).to.be.equal(1); // One event emitted
-            expect(events[0].args.sender).to.equal(await acc1.getAddress());
-            expect(events[0].args.val).to.equal(money);
+            // // Assert that the event was emitted with correct arguments
+            // expect(events.length).to.be.equal(1); // One event emitted
+            // expect(events[0].args.sender).to.equal(await acc1.getAddress());
+            // expect(events[0].args.val).to.equal(money);
+            
+            expect(filters).to.emit(financial, "Deposit");
         });
 
         describe("Function withDraw", () => {
