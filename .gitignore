@@ -1,7 +1,7 @@
 node_modules
 .env
 .vscode
-
+.op
 # Hardhat files
 /cache
 /artifacts
