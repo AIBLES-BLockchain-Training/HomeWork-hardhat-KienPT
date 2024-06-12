@@ -2,12 +2,19 @@
   "name": "hardhat-project",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+<<<<<<< HEAD
     "@nomiclabs/hardhat-etherscan": "^3.1.8",
+=======
+    "@openzeppelin/hardhat-upgrades": "^3.1.1",
+>>>>>>> 5beca8b9bfcca67eeee721f792ada7d0e7b8c3d5
     "hardhat": "^2.22.4"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.2",
+<<<<<<< HEAD
     "@openzeppelin/hardhat-upgrades": "^3.1.1",
+=======
+>>>>>>> 5beca8b9bfcca67eeee721f792ada7d0e7b8c3d5
     "dotenv": "^16.4.5"
   }
 }
