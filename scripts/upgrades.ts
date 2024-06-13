@@ -32,7 +32,7 @@ async function main() {
   console.log("Verify contract...");
   run("verify:verify", {
     address: proxyAddr,
-    contructorArgs: [],
+    constructorArgs: [],
   });
 }
 

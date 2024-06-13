@@ -23,8 +23,15 @@ async function main() {
 
   //Verify contract iplement
   const iplmAddr = await upgrades.erc1967.getImplementationAddress(proxyAddr);
+  //contract proxy
+  console.log("Verify contract proxy...");
+  await run("verify:verify", {
+    address: iplmAddr,
+    constructorArgs: [],
+  });
 
-  console.log("Verify contract...");
+  //contract iplement
+  console.log("Verify contract logic...");
   await run("verify:verify", {
     address: iplmAddr,
     constructorArgs: [],
