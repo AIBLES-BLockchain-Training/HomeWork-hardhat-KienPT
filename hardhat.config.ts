@@ -1,7 +1,8 @@
-import { HardhatUserConfig, task, vars } from "hardhat/config";
-import "@openzeppelin/hardhat-upgrades";
+import { HardhatUserConfig} from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import * as dotenv from "dotenv";
+import '@openzeppelin/hardhat-upgrades';
+import * as dotenv from 'dotenv';
+
 
 dotenv.config();
 
@@ -18,19 +19,20 @@ const config: HardhatUserConfig = {
   gasReporter: {
     enabled: Boolean(process.env.REPORT_GAS) || true,
   },
+
+  sourcify: {
+    enabled: true,
+  },
+
   networks: {
     bscTestnet: {
-      url: process.env.BSC_TESTNET_RPC_URL,
+      url: process.env.BSC_TESTNET_RPC_URL || "",
       accounts: [process.env.DEPLOYER_PRIVATE_KEY || ""],
     },
-    sepolia: {
-      url: process.env.SEPOLIA_RPC_URL,
-      accounts: [process.env.DEPLOYER_PRIVATE_KEY || ""],
-    },
-  },
+  }, 
+
   etherscan: {
     apiKey: {
-      sepolia: process.env.ETHERSCAN_API_KEY || "",
       bscTestnet: process.env.BSCSCAN_API_KEY || "",
     },
   },
